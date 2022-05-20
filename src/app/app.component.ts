@@ -24,6 +24,7 @@ export class AppComponent {
     this.showSecret = !this.showSecret;
     this.i ++;
     this.count.push(this.i);
+
   }
 
 }
