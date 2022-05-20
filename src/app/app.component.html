@@ -4,6 +4,50 @@
       <h3>Estoy en AppComponent</h3>
       <hr>
       <app-servers></app-servers>
+      <hr>
+      <label>Username</label>
+      <!--<input-->
+      <!--  type="text"-->
+      <!--  class="form-control"-->
+      <!--  (input)="onUpdateUsername($event)">-->
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="username">
+      <p>{{ username }}</p>
+      <button
+        class="btn btn-primary"
+        [disabled]="username === ''"
+        (click)="username = ''"
+      >Reset Username</button>
+      <hr>
+      <app-success-alert></app-success-alert>
+      <hr>
+      <app-warning-alert></app-warning-alert>
+      <hr>
+      <button class="btn btn-primary" (click)="clickButton()">Display Details </button>
+      <p *ngIf="!showSecret">Secret password = tune</p>
+      <div
+        *ngFor="let countItem of count; let i = index"
+        [ngStyle]="{backgroundColor: i >= 2 ? 'blue' : 'transparent'}"
+        [ngClass]="{'white-text': i >= 2}"
+      >{{ countItem }}</div>
+<!--      <div-->
+<!--        *ngFor="let countItem of count"-->
+<!--        [ngStyle]="{backgroundColor: countItem >= 5 ? 'blue' : 'transparent'}"-->
+<!--        [ngClass]="{'white-text': countItem >= 5}"-->
+<!--      >{{ countItem }}</div>-->
+<!--      <p *ngIf="!showSecret; else showCount">Secret password = tune</p>-->
+<!--      <ng-template #showCount>-->
+<!--        <p *ngIf="i<5">{{i}}</p>-->
+<!--        <p-->
+<!--          *ngIf="i>4"-->
+<!--          [ngStyle]="{backgroundColor: 'blue'}"-->
+<!--          [ngClass]="{mayor: i > 4}"-->
+<!--        >{{i}}</p>-->
+<!--      </ng-template>-->
+<!--      <p *ngFor="let i of count">{{i}}</p>-->
+
     </div>
   </div>
 
